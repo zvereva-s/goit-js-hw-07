@@ -29,18 +29,18 @@ function onModalOpen(e) {
     
    
     const useLightBox = basicLightbox.create(`
-    <img src="${urlImgOriginal}" width="1280" height="auto">`);
-    useLightBox.show();
+    <img src="${urlImgOriginal}" width="1280" height="auto">`, { onShow: () => {document.addEventListener('keydown', closeByEsc)},
+        onClose: () => {document.removeEventListener('keydown', closeByEsc)}}
+       );
 
-    window.addEventListener('keydown', closeByEsc);
+    useLightBox.show();
     
     function closeByEsc(e) {
         if (e.code !== 'Escape') {
             return;
         }
         useLightBox.close();
-        
     }
     
 }
-window.removeEventListener('keydown', closeByEsc);
+
