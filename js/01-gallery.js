@@ -28,19 +28,19 @@ function onModalOpen(e) {
     let urlImgOriginal = target.dataset.source;
     
    
-    const useLightBox = basicLightbox.create(`
-    <img src="${urlImgOriginal}" width="1280" height="auto">`);
-    useLightBox.show();
+    // const useLightBox = basicLightbox.create(`
+    // <img src="${urlImgOriginal}" width="1280" height="auto">`);
+    // useLightBox.show();
 
-    window.addEventListener('keydown', closeByEsc);
+    // window.addEventListener('keydown', closeByEsc);
     
-    function closeByEsc(e) {
-        if (e.code !== 'Escape') {
-            return;
-        }
-        useLightBox.close();
+    // function closeByEsc(e) {
+    //     if (e.code !== 'Escape') {
+    //         return;
+    //     }
+    //     useLightBox.close();
         
-    }
+    // }
     
 }
 window.removeEventListener('keydown', closeByEsc);
